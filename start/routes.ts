@@ -20,6 +20,12 @@
 
 import Route from '@ioc:Adonis/Core/Route';
 
+
+
+//**** USER ROUTES ************************************************************************************************************************************************//
+
+
+
 // USER SIGNUP //
 Route.post('/user/signup', 'UserController.signup');
 
@@ -38,3 +44,67 @@ Route.delete('/user/deactivate', 'UserController.deactivate').middleware(['login
 
 // USER CHANGE PASSWORD //
 Route.patch('/user/change-password', 'UserController.change_password').middleware(['loginAuth']);
+
+
+
+
+
+
+//**** POST ROUTES ************************************************************************************************************************************************//
+
+
+
+// USER CREATE POST //
+Route.post('/user/create-post', 'PostController.createPost').middleware(['loginAuth']);
+
+
+
+// USER DELETE POST //
+Route.delete('/user/delete-post', 'PostController.deletePost').middleware(['loginAuth']);
+
+
+// USER ALL POSTS WITH COMMENTS //
+Route.get('/user/get-all-posts', 'PostController.getAllPost').middleware(['loginAuth']);
+
+
+
+
+
+
+//**** ALL POSTS LIVE **********************************************************************************************************************************************//
+
+
+
+// SET POST LIVE //
+Route.get('/upload/user/posts', 'PostController.setPostLive');
+
+
+
+
+
+
+//**** POSTS COMMENTS ROUTES **************************************************************************************************************************************//
+
+
+
+// SET POST LIVE //
+Route.post('/user/create-comment', 'CommentController.createComment').middleware(['loginAuth']);
+
+
+
+
+
+
+//**** SOCIAL AUTHENTICATION ROUTE **************************************************************************************************************************************//
+
+
+
+// AUTHENTICATE WITH GOOGLE //
+Route.post('/google/redirect', 'SocialController.googleAuthentication');
+
+
+
+// GOOGLE REDIRECT //
+Route.get('/google/callback', 'SocialController.googleRedirect');
+  
+
