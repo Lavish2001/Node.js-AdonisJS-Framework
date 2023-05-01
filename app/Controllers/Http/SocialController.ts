@@ -54,12 +54,13 @@ export default class SocialController {
       const user = await google.user();
       const userPass = `${user.name}@123`;
       const hashedPassword = await Hash.make(userPass);
-      const createNewUser = await User.create({
+
+      await User.create({
         username: user.name,
         email: user?.email!,
         password: hashedPassword
       });
-      return response.status(200).json(createNewUser)
+      return response.status(200).json({ 'status': 'success', 'message': 'Signup Successfull', 'pasword': `Your password for this account is ${userPass} please remeber that passsowrd for Login.` })
 
     } catch (err) {
       return response.status(500).json({ 'status': 'failed', 'message': err.message })

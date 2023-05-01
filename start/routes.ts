@@ -58,7 +58,6 @@ Route.patch('/user/change-password', 'UserController.change_password').middlewar
 Route.post('/user/create-post', 'PostController.createPost').middleware(['loginAuth']);
 
 
-
 // USER DELETE POST //
 Route.delete('/user/delete-post', 'PostController.deletePost').middleware(['loginAuth']);
 
@@ -103,8 +102,7 @@ Route.post('/user/create-comment', 'CommentController.createComment').middleware
 Route.get('/google/redirect', 'SocialController.googleAuthentication');
 
 
-
 // GOOGLE REDIRECT //
 Route.get('/google/callback', 'SocialController.googleRedirect');
-  
+
 
