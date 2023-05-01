@@ -8,7 +8,6 @@
 import Env from '@ioc:Adonis/Core/Env'
 import { AllyConfig } from '@ioc:Adonis/Addons/Ally'
 
-
 /*
 |--------------------------------------------------------------------------
 | Ally Config

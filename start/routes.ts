@@ -100,7 +100,7 @@ Route.post('/user/create-comment', 'CommentController.createComment').middleware
 
 
 // AUTHENTICATE WITH GOOGLE //
-Route.post('/google/redirect', 'SocialController.googleAuthentication');
+Route.get('/google/redirect', 'SocialController.googleAuthentication');
 
 
 
