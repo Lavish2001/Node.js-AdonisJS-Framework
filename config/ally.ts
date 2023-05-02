@@ -20,6 +20,17 @@ import { AllyConfig } from '@ioc:Adonis/Addons/Ally'
 const allyConfig: AllyConfig = {
 	/*
 	|--------------------------------------------------------------------------
+	| Github driver
+	|--------------------------------------------------------------------------
+	*/
+	github: {
+		driver: 'github',
+		clientId: Env.get('GITHUB_CLIENT_ID'),
+		clientSecret: Env.get('GITHUB_CLIENT_SECRET'),
+		callbackUrl: 'http://localhost:3333/github/callback',
+	},
+	/*
+	|--------------------------------------------------------------------------
 	| Google driver
 	|--------------------------------------------------------------------------
 	*/
@@ -28,6 +39,17 @@ const allyConfig: AllyConfig = {
 		clientId: Env.get('GOOGLE_CLIENT_ID'),
 		clientSecret: Env.get('GOOGLE_CLIENT_SECRET'),
 		callbackUrl: 'http://localhost:3333/google/callback',
+	},
+	/*
+	|--------------------------------------------------------------------------
+	| Twitter driver
+	|--------------------------------------------------------------------------
+	*/
+	twitter: {
+		driver: 'twitter',
+		clientId: Env.get('TWITTER_CLIENT_ID'),
+		clientSecret: Env.get('TWITTER_CLIENT_SECRET'),
+		callbackUrl: 'http://localhost:3333/twitter/callback',
 	},
 }
 

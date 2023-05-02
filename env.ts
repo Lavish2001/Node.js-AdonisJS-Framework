@@ -20,7 +20,11 @@ export default Env.rules({
 	MYSQL_USER: Env.schema.string(),
 	MYSQL_PASSWORD: Env.schema.string.optional(),
 	MYSQL_DB_NAME: Env.schema.string(),
+	TWITTER_CLIENT_ID: Env.schema.string(),
+	TWITTER_CLIENT_SECRET: Env.schema.string(),
 	GOOGLE_CLIENT_ID: Env.schema.string(),
-	GOOGLE_CLIENT_SECRET: Env.schema.string()
+	GOOGLE_CLIENT_SECRET: Env.schema.string(),
+	GITHUB_CLIENT_ID: Env.schema.string(),
+	GITHUB_CLIENT_SECRET: Env.schema.string()
 })
 

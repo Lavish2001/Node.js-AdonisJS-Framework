@@ -26,6 +26,11 @@ import Route from '@ioc:Adonis/Core/Route';
 
 
 
+
+// HOME ROUTE //
+Route.get('/', 'UserController.main');
+
+
 // USER SIGNUP //
 Route.post('/user/signup', 'UserController.signup');
 
@@ -70,7 +75,7 @@ Route.get('/user/get-all-posts', 'PostController.getAllPost').middleware(['login
 
 
 
-//**** ALL POSTS LIVE **********************************************************************************************************************************************//
+//**** ALL POSTS LIVE *********************************************************************************************************************************************//
 
 
 
@@ -94,7 +99,7 @@ Route.post('/user/create-comment', 'CommentController.createComment').middleware
 
 
 
-//**** SOCIAL AUTHENTICATION ROUTE **************************************************************************************************************************************//
+//**** SOCIAL AUTHENTICATION ROUTE ********************************************************************************************************************************//
 
 
 
@@ -104,5 +109,22 @@ Route.get('/google/redirect', 'SocialController.googleAuthentication');
 
 // GOOGLE REDIRECT //
 Route.get('/google/callback', 'SocialController.googleRedirect');
+
+
+
+// AUTHENTICATE WITH GITHUB //
+Route.get('/github/redirect', 'SocialController.githubAuthentication');
+
+
+// GITHUB REDIRECT //
+Route.get('/github/callback', 'SocialController.githubRedirect');
+
+
+// AUTHENTICATE WITH TWITTER //
+Route.get('/twitter/redirect', 'SocialController.twitterAuthentication');
+
+
+// TWITTER REDIRECT //
+Route.get('/twitter/callback', 'SocialController.twitterRedirect');
 
 

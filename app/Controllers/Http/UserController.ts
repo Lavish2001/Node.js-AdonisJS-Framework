@@ -92,4 +92,17 @@ export default class UsersController {
     }
 
 
+
+
+    // HOME //
+
+    public async main({ response }: HttpContextContract) {
+        try {
+            return response.json('Welcome To The Site')
+        } catch (err) {
+            return response.status(500).json({ 'status': 'failed', 'message': 'ERROR' })
+        }
+    }
+
+
 }
